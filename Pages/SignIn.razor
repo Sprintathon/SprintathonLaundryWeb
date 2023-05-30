@@ -1,0 +1,36 @@
+@page "/SignIn"
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div class="container text-center p-5 my-5 border rounded pill">
+    <div class="row my-6 ">
+        <div class="col ms-4">
+            <img src="img/laundry_img.jpg" width="350" height="350"/>
+    </div>
+<div class="col">
+        <div class="Message"><h4>Welcome Back</h4></div>
+            <form>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label><br/>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-secondary">Sign In</button>
+                    <p>Don't have an account? <a href="SignUp">Sign Up</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
