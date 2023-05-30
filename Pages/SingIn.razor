@@ -1,0 +1,54 @@
+﻿@page "/login"
+
+<style>
+    .sign-hide{
+        display: none;
+    }
+</style>
+
+<PageTitle>Logiooooon </PageTitle>
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh">
+    <div class="card shadow-sm p-4  w-80 h-65">
+        <div class="row">
+            <div class="col-lg-6 d-none d-lg-flex rounded-5">
+                <img class="img-fluid" src="img/laundry_img.jpg" alt="Laundry" width="250" height="auto">
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div>
+                    <h4>Welcome back</h4>
+                </div>
+                <form>
+            
+               
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"><br/>
+                        </div>
+
+                        <button  type="submit" class="btn btn-primary" style="height:30; width:stretch"> Create Account</button>
+                    <p class="my-3">
+                        Not new around here? <a href="#">Sign in</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+
+
+
+
+
+
+@code {
+   
+}
