@@ -3,11 +3,12 @@
         border: 1px solid transparent;
     }
 
-    .nav-link:hover {
-        border: 1px solid rgb(137, 207, 240);
-        background-color: rgba(137, 207, 240, 0.5) !important;
-    }
+        .nav-link:hover {
+            border: 1px solid rgba(97,144,232, 1.0);
+            background-color: rgba(97,144,232, 1.0) !important;
+        }
 </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
 <div class="top-row ps-3 bg-light navbar" style="border-right: solid 1px rgba(100, 100, 100 , 0.2);">
     <div class="container-fluid">
@@ -23,25 +24,25 @@
         <!-- Dashboard -->
         <div class="nav-item px-3">
             <NavLink class="nav-link text-dark" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-dashboard" aria-hidden="true"></span> Dashboard
+                <span class="bi bi-columns-gap me-2" aria-hidden="true"></span> Dashboard
             </NavLink>
         </div>
-        @* <!--Services-->
+        <!--Services-->
         <div class="nav-item px-3">
             <NavLink class="nav-link text-dark" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Services
+                <i class="bi bi-person-gear me-2" aria-hidden="true"></i> Services
             </NavLink>
-        </div> *@
+        </div>
         <!--Settings-->
-        @* <div class="nav-item px-3">
-            <NavLink class="nav-link text-dark" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Settings
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-dark" href="/settings">
+                <i class="bi bi-gear me-2 fw-bold" style="font-weight: bold;" aria-hidden="true"></i> Settings
             </NavLink>
-        </div> *@
+        </div>
         <!--Statistics-->
         <div class="nav-item px-3">
-            <NavLink class="nav-link text-dark" href="/service-configurations">
-                <span class="oi oi-people" aria-hidden="true"></span> ServiceConfigurations
+            <NavLink class="nav-link text-dark" href="/statistics">
+                <i class="bi bi-bar-chart-line me-2" aria-hidden="true"></i> Statistics
             </NavLink>
         </div>
         <div class="nav-item px-3">
@@ -49,18 +50,18 @@
                 <span class="oi oi-people" aria-hidden="true"></span> Settings
             </NavLink>
         </div>
-        @* <!--Orders-->
         <div class="nav-item px-3">
             <NavLink class="nav-link text-dark" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Orders
+                <i class="bi bi-layers me-2" aria-hidden="true"></i> Orders
             </NavLink>
-        </div> *@
+        </div>
         <!-- Logout -->
         <div class="nav-item m-4">
             <a href="/logout" class="text-dark text-decoration-none"><span aria-hidden="true" class="oi oi-account-logout me-2"></span>Logout</a>
         </div>
     </nav>
 </div>
+
 
 @code {
     private bool collapseNavMenu = true;
