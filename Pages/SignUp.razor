@@ -1,0 +1,105 @@
+﻿@inject NavigationManager NavManager
+@page "/register"
+
+<!--styles only applicable to this page-->
+<style>
+    .form-control {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(100,100,100, 0.3);
+        border-radius: 2px;
+    }
+
+    .nav-hide {
+        display: none !important;
+    }
+</style>
+
+<!--Page content-->
+<div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+    <div class="w-100">
+        <div class="card border-0 p-3 mx-auto">
+            <div class="row">
+                <!-- Image visible on large screen and above-->
+                <div class="col-lg-6 col-12 my-2 d-none d-lg-flex align-items-center justify-content-center">
+                    <img src="img/laundry_img.png" class="img-fluid mx-auto rounded-3" width="500" style="height: auto;">
+                </div>
+                <!-- form container visible on large screen and above-->
+                <div class="col-lg-6 col-12 my-2 d-flex justify-content-center align-items-center">
+                    <div class="w-100 px-md-5">
+                        <div class="row">
+                            <div class="col-12 my-3 mx-auto">
+                                <h3 class="fw-bold">Create an account</h3>
+                                <small class="mb-2 my-0 fw-bold">Let's get started with your 30 day business trial</small>
+                            </div>
+                        </div>
+                        <!--form-->
+                        <div class="row">
+                            <div class="col-12 mx-auto">
+                                <EditForm OnSubmit="RegisterBusiness" Model="business" class="needs-validation" novalidate>
+                                    <!--Business Name Field-->
+                                    <div class="form-group my-4">
+                                        <InputText @bind-Value="@business.Name" type="text" class="form-control" id="businessName" DisplayName="businessName" placeholder="Business Name* (less than 30 characters)" maxlength="30" minlength="3" required/>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please enter a valide Business name.
+                                        </div>
+                                    </div>
+                                    <!--Email Field-->
+                                    <div class="form-group my-4">
+                                        <InputText @bind-Value="@business.Email" type="email" class="form-control" id="email" DisplayName="email" placeholder="Email*" required/>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please enter a valide email.
+                                        </div>
+                                    </div>
+                                    <!--Email Field-->
+                                    <div class="form-group my-4">
+                                        <InputText @bind-Value="@business.Password" type="password" DisplayName="password" class="form-control" id="password" placeholder="Password*" required />
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please enter a valide password!
+                                        </div>
+                                    </div>
+                                    <!--Submit Button-->
+                                    <button class="btn btn-primary mt-5 w-100 rounded-5 fw-bold" type="submit">Create Account</button>
+                                    <div class="mb-2 my-1 w-100 text-center">
+                                        <small>Not new around here? <a href="/login" class="text-decoration-none fw-bold">Sign in</a></small>
+                                    </div>
+                                </EditForm>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    UserModel business = new();
+    string loading = "d-none";
+
+
+    async Task RegisterBusiness()
+    {
+        loading = "d-block";
+
+        HttpClient client = new HttpClient();
+
+        var response = await client.PostAsJsonAsync("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/login", business);
+
+        if (response.IsSuccessStatusCode)
+        {
+            NavManager.NavigateTo("/dashboard");
+        }
+    }
+}
