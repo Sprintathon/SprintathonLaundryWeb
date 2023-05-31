@@ -1,28 +1,58 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿<style>
+    .nav-link {
+        border: 1px solid transparent;
+    }
+
+    .nav-link:hover {
+        border: 1px solid rgb(137, 207, 240);
+        background-color: rgba(137, 207, 240, 0.5) !important;
+    }
+</style>
+
+<div class="top-row ps-3 bg-light navbar" style="border-right: solid 1px rgba(100, 100, 100 , 0.2);">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">SprintathonLaundryWeb</a>
+        <a class="navbar-brand text-lg text-dark fw-bold" style="font-size: 30px;" href="">Laundry</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
 </div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+<div class="@NavMenuCssClass bg-light nav-scrollable" style="border-right: solid 1px rgba(100, 100, 100, 0.2);" @onclick="ToggleNavMenu">
     <nav class="flex-column">
+        <!-- Dashboard -->
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
+            <NavLink class="nav-link text-dark" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-dashboard" aria-hidden="true"></span> Dashboard
             </NavLink>
         </div>
+        <!--Services-->
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link text-dark" href="counter">
+                <span class="oi oi-plus" aria-hidden="true"></span> Services
             </NavLink>
         </div>
+        <!--Settings-->
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            <NavLink class="nav-link text-dark" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Settings
             </NavLink>
+        </div>
+        <!--Statistics-->
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-dark" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Statistics
+            </NavLink>
+        </div>
+        <!--Orders-->
+        <div class="nav-item px-3">
+            <NavLink class="nav-link text-dark" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Orders
+            </NavLink>
+        </div>
+        <!-- Logout -->
+        <div class="nav-item m-4">
+            <a href="/logout" class="text-dark text-decoration-none"><span aria-hidden="true" class="oi oi-account-logout me-2"></span>Logout</a>
         </div>
     </nav>
 </div>
@@ -37,3 +67,5 @@
         collapseNavMenu = !collapseNavMenu;
     }
 }
+
+
