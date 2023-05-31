@@ -1,12 +1,5 @@
+
 @page "/service-configurations"
-
-string[] configData = {{"1", "Service name", "Average Duration", "Price"}};
-
-<style>
-    .page.sign-hide {
-        display: none: 
-    }
-</style>
 
 <PageTitle>Service Configurations</PageTitle>
     <h2 class="display-5">Service Configuration</h2>
@@ -22,17 +15,23 @@ string[] configData = {{"1", "Service name", "Average Duration", "Price"}};
             </tr>
         </thead>
             <tbody>
+            @foreach (string configDatum in configData)
+            {
                 <tr>
-                    <td> 1</td>
-                    <td>Service Name </td>
-                    <td>Average Duration</td>
-                    <td> Service Price</td>
-                    <td>
-                        <div class="form-check form-switch"> 
-                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchDefault "/>
-                        </div>
-                    </td>
+                    <td class="text-start">@configDatum[0]</td>
+                    <td class="text-start">@configDatum[1]</td>
+                    <td class="text-start">@configDatum[2]</td>
+                    <td class="text-start">@configDatum[3]</td>
                 </tr>
+            }          
             </tbody>
     </table>
 </div>
+
+@code {
+    string[,] configData = new string[,]
+    {
+        {"1", "Service name", "Average Duration", "Price"},
+        {"2", "Service name", "Average Duration", "Price"},
+    };
+}
