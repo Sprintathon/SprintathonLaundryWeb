@@ -1,4 +1,6 @@
-﻿@page "/login"
+@page "/login"
+@page "/logout"
+@page "/"
 @inject NavigationManager NavManager
 
 <!--styles only applicable to this page-->
@@ -80,17 +82,10 @@
     UserModel business = new();
     string loading = "d-none";
 
-    async Task AttemptSignIn()
+    void AttemptSignIn()
     {
         loading = "d-block";
 
-        HttpClient client = new HttpClient();
-
-        var response = await client.PostAsJsonAsync("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/resgister", business);
-
-        if(response.IsSuccessStatusCode)
-        {
-            NavManager.NavigateTo("/dashboard");
-        }
+        NavManager.NavigateTo("/dashboard");
     }
 }
