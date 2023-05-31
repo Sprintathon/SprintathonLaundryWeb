@@ -1,0 +1,37 @@
+
+@page "/service-configurations"
+
+<PageTitle>Service Configurations</PageTitle>
+    <h2 class="display-5">Service Configuration</h2>
+<div class="card">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> # </th>
+                <th> Service Name</th>
+                <th> Average Duration</th>
+                <th> Service Price</th>
+                <th> Status</th>
+            </tr>
+        </thead>
+            <tbody>
+            @foreach (string configDatum in configData)
+            {
+                <tr>
+                    <td class="text-start">@configDatum[0]</td>
+                    <td class="text-start">@configDatum[1]</td>
+                    <td class="text-start">@configDatum[2]</td>
+                    <td class="text-start">@configDatum[3]</td>
+                </tr>
+            }          
+            </tbody>
+    </table>
+</div>
+
+@code {
+    string[,] configData = new string[,]
+    {
+        {"1", "Service name", "Average Duration", "Price"},
+        {"2", "Service name", "Average Duration", "Price"},
+    };
+}

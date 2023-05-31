@@ -1,5 +1,5 @@
-@page "/login"
-@inject NavigationManager NavManager
+﻿@inject NavigationManager NavManager
+@page "/register"
 
 <!--styles only applicable to this page-->
 <style>
@@ -30,17 +30,27 @@
                     <div class="w-100 px-md-5">
                         <div class="row">
                             <div class="col-12 my-3 mx-auto">
-                                <h3 class="fw-bold">Welcome back.</h3>
-                                <small class="mb-2 my-0 fw-bold">Let's get you signed in.</small>
+                                <h3 class="fw-bold">Create an account</h3>
+                                <small class="mb-2 my-0 fw-bold">Let's get started with your 30 day business trial</small>
                             </div>
                         </div>
                         <!--form-->
                         <div class="row">
                             <div class="col-12 mx-auto">
-                                <EditForm OnSubmit="AttemptSignIn" Model="business" class="needs-validation" novalidate>
+                                <EditForm OnSubmit="RegisterBusiness" Model="business" class="needs-validation" novalidate>
+                                    <!--Business Name Field-->
+                                    <div class="form-group my-4">
+                                        <InputText @bind-Value="@business.Name" type="text" class="form-control" id="businessName" DisplayName="businessName" placeholder="Business Name* (less than 30 characters)" maxlength="30" minlength="3" required/>
+                                        <div class="valid-feedback">
+                                            Looks good!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please enter a valide Business name.
+                                        </div>
+                                    </div>
                                     <!--Email Field-->
                                     <div class="form-group my-4">
-                                        <InputText @bind-Value="@business.Email" type="email" class="form-control" id="email" DisplayName="email" placeholder="Email*" required />
+                                        <InputText @bind-Value="@business.Email" type="email" class="form-control" id="email" DisplayName="email" placeholder="Email*" required/>
                                         <div class="valid-feedback">
                                             Looks good!
                                         </div>
@@ -59,9 +69,9 @@
                                         </div>
                                     </div>
                                     <!--Submit Button-->
-                                    <button class="btn btn-primary mt-5 w-100 rounded-5 fw-bold" type="submit"><span class="oi oi-account-login me-2" aria-hidden="true" ></span>Login</button>
+                                    <button class="btn btn-primary mt-5 w-100 rounded-5 fw-bold" type="submit">Create Account</button>
                                     <div class="mb-2 my-1 w-100 text-center">
-                                        <small>Don't have an account yet? <a href="/register" class="text-decoration-none fw-bold">Sign up.</a></small>
+                                        <small>Not new around here? <a href="/login" class="text-decoration-none fw-bold">Sign in</a></small>
                                     </div>
                                 </EditForm>
                             </div>
@@ -72,23 +82,22 @@
         </div>
     </div>
 </div>
-<div class="@loading">
 
-</div>
 
 @code {
     UserModel business = new();
     string loading = "d-none";
 
-    async Task AttemptSignIn()
+
+    async Task RegisterBusiness()
     {
         loading = "d-block";
 
         HttpClient client = new HttpClient();
 
-        var response = await client.PostAsJsonAsync("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/resgister", business);
+        var response = await client.PostAsJsonAsync("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/login", business);
 
-        if(response.IsSuccessStatusCode)
+        if (response.IsSuccessStatusCode)
         {
             NavManager.NavigateTo("/dashboard");
         }
