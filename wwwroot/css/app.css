@@ -99,3 +99,21 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+
+/* Primary font */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Primary Button custom styles */
+.btn.btn-primary {
+    border: transparent;
+    border-radius: 8px;
+    background-color: #6190E9;
+}
+
+    .btn.btn-primary:hover {
+        background-color: #77a1e8;
+    }
+
