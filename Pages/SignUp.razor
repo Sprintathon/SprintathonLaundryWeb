@@ -95,11 +95,12 @@
 
         HttpClient client = new HttpClient();
 
-        var response = await client.PostAsJsonAsync("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/login", business);
+        var response = await client.PostAsJsonAsync<UserModel>("http://localhost:5054/api/Auth/resgister", business);
 
         if (response.IsSuccessStatusCode)
         {
             NavManager.NavigateTo("/dashboard");
+
         }
     }
 }

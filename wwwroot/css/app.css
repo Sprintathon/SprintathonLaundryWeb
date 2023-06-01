@@ -107,13 +107,16 @@ body {
 }
 
 /* Primary Button custom styles */
-.btn.btn-primary {
+.btn {
     border: transparent;
     border-radius: 8px;
-    background-color: #6190E9;
 }
 
-    .btn.btn-primary:hover {
-        background-color: #77a1e8;
-    }
+.btn.btn-primary {
+    background-color: #6190E8;
+}
+
+.btn.btn-primary:hover {
+    background-color: #77a1e8;
+}
 

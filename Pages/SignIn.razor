@@ -82,13 +82,20 @@
 </div>
 
 @code {
-    UserModel business = new();
+    BusinessLogInRequest business = new();
     string loading = "d-none";
 
     void AttemptSignIn()
     {
         loading = "d-block";
 
-        NavManager.NavigateTo("/dashboard");
+        HttpClient client = new HttpClient();
+
+        var response = await client.PostAsJsonAsync<BusinessLogInRequest>("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/login", business);
+
+        if(response.IsSuccessStatusCode)
+        {
+            NavManager.NavigateTo("/dashboard");
+        }
     }
 }
