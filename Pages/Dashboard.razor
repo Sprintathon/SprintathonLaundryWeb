@@ -1,37 +1,87 @@
 ﻿@page "/dashboard"
 @page "/"
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+<style>
+    .card{
+        border-radius: 10px !important;
+        background-co
+    }
+
+    .card:hover {
+        box-shadow: 0 0 10px 1px rgba(30, 30, 30, 0.1);
+        transition: 0.3s ease;
+    }
+</style>
+
 <!-- Page Heading -->
 <div class="border-bottom mb-5">
-    <h3 class="fw-bold display-5">Admin Dashboard</h3>
+    <h3 class="fw-bold display-6">Admin <span style="color: #6190E9;">Dashboard</span></h3>
 </div>
 
 <!-- Page Content -->
 <div class="row">
-    <div class="col-12 col-lg-3">
+    <div class="col-12 col-lg-4">
         <div class="row g-3">
             <div class="col-6 col-lg-12">
-                <div class="card p-4 rounded-3">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-person-exclamation text-warning fs-1"></i>
+                        </div>
+                        <div class="col-9">
+                            <h5>Unattended Orders</h5>
+                            <p><small>1221 Orders - <span class="text-warning fw-bolder">12</span> this week</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-lg-12">
-                <div class="card p-4 rounded-3">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-patch-plus-fill fs-1 text-success"></i>
+                        </div>
+                        <div class="col-9">
+                            <h5>New Orders</h5>
+                            <p><small>1221 Orders - <span class="text-success fw-bolder">12</span> this week</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-lg-12">
-                <div class="card p-4 rounded-3">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-people-fill fs-1"></i>
+                        </div>
+                        <div class="col-9">
+                            <h5>Customer Count</h5>
+                            <p><small>1221 Orders - <span class="text-black fw-bolder">12</span> this week</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-lg-12">
-                <div class="card p-4 rounded-3">
+                <div class="card p-3">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="bi bi-person-vcard fs-1 text-danger"></i>
+                        </div>
+                        <div class="col-9">
+                            <h5>Clients List</h5>
+                            <p><small>1221 Orders - <span class="text-danger fw-bolder">12</span> this week</small></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col-12 col-lg-9 px-3 mt-5 mt-lg-0">
+    <div class="col-12 col-lg-8 card px-3 mt-5 mt-lg-0">
         <table class="table table-responsive table-striped">
-            <thead>
+            <thead style="#6190E9">
                 <tr>
                     <th>#</th>
                     <th>Name</th>
@@ -45,6 +95,78 @@
                     <td>Data 1</td>
                     <td>Data 2</td>
                     <td>Data 3</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
+                </tr>
+                <tr>
+                    <td>#</td>
+                    <td>Data 4</td>
+                    <td>Data 5</td>
+                    <td>Data 6</td>
                 </tr>
                 <tr>
                     <td>#</td>

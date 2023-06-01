@@ -77,7 +77,7 @@
 </div>
 
 @code {
-    UserModel business = new();
+    BusinessLogInRequest business = new();
     string loading = "d-none";
 
     async Task AttemptSignIn()
@@ -86,7 +86,7 @@
 
         HttpClient client = new HttpClient();
 
-        var response = await client.PostAsJsonAsync("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/resgister", business);
+        var response = await client.PostAsJsonAsync<BusinessLogInRequest>("https://gdd3rp3j-7114.euw.devtunnels.ms/api/Auth/login", business);
 
         if(response.IsSuccessStatusCode)
         {
